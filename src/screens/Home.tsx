@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import CBButton from '../components/CBButton';
 import Colors from '../constants/Colors';
+import { fetchCoinData } from '../store/actions/watchlist';
 
+fetchCoinData
 
 const Home = () => {
+
+  const dispatch =  useDispatch();
+
+  const loadData = () => {
+    try {
+      dispatch(fetchCoinData());  
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(()=> {
+    loadData()
+  },[])
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
