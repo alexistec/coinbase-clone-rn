@@ -27,7 +27,7 @@ const TabBarNavigator = createBottomTabNavigator();
 const TabNavigator = () => {
     return(
         <TabBarNavigator.Navigator tabBar={(props) => <TabBar {...props} />}>
-            <TabBarNavigator.Screen name='Home' component={HomeNavigator}/>
+            <TabBarNavigator.Screen name='Home' options={{headerShown:false}}component={HomeNavigator}/>
             <TabBarNavigator.Screen name='Portafolio' component={Portafolio}/>
             <TabBarNavigator.Screen name='Actions' component={Actions}/>
             <TabBarNavigator.Screen name='Prices' component={Prices}/>
